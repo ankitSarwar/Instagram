@@ -100,8 +100,6 @@ user : User
 5. The controller method returns a response to the API.
 6. The API sends the response back to the user.
 
----
-
 
 ## API End Points 
 
@@ -120,7 +118,6 @@ DELETE /user/signout: authenticate a user and delete authentication token
 POST /post: create a new post
 GET /post: get all posts
 ```
-
 
 ## DataBase Used
 * SQL database
