@@ -43,7 +43,9 @@ public class UserService {
     @Autowired
     LikeService likeService;
 
-    @Autowired TokenService tokenService;
+    @Autowired
+    TokenService tokenService;
+
     public SignUpOutput signUp(User signUpDto) {
 
 
