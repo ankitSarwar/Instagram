@@ -148,30 +148,10 @@ The project is a basic web application built using Java and the Spring framework
 
 ## Author
 
-👤 **Ajinkya Padule**
+👤 **Ankit Sarwar**
 
-* GitHub: [AjinkyaPersonal](https://github.com/AjinkyaPersonal)
+* GitHub: [Ankit Sarwar](https://github.com/ankitSarwar)
 
-* LinkedIn: [Ajinkya Padule](https://www.linkedin.com/in/ajinkya-padule-04b8541a6/)
+* LinkedIn: [Ankit Sarwar](https://www.linkedin.com/in/ankit-sarwar/)
     
----
 
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page]("url").
-    
----
-    
-## Show your support
-
-Give a ⭐️ if this project helped you!
-    
----
-    
-## 📝 License
-
-Copyright © 2023 [Ajinkya Padule](https://github.com/AjinkyaPersonal).<br />
-
-This project is [MIT]("url") licensed.
-    
----
