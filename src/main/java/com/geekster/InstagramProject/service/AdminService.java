@@ -6,6 +6,7 @@ import com.geekster.InstagramProject.dto.SignInOutput;
 import com.geekster.InstagramProject.dto.SignUpOutput;
 import com.geekster.InstagramProject.model.Admin;
 import com.geekster.InstagramProject.model.AdminAuthenticationToken;
+import com.geekster.InstagramProject.model.AuthenticationToken;
 import com.geekster.InstagramProject.repo.IAdminRepo;
 import jakarta.xml.bind.DatatypeConverter;
 import org.springframework.beans.factory.annotation.Autowired;

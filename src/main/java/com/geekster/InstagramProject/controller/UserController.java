@@ -15,7 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+
 
 @RestController
 @RequestMapping("/user")
@@ -87,10 +87,6 @@ public class UserController {
         return new ResponseEntity<String>(msg , status);
     }
 
-    /**
-     *
-     * todo : add authentication pass email and token of myid : and perform authentication
-     */
     @PostMapping("/follow/{myId}/{otherId}")
     String followUser(@PathVariable Long myId, @PathVariable Long otherId)
     {
@@ -99,9 +95,8 @@ public class UserController {
 
 
     @PostMapping("/like")
-    void likePost(@RequestBody PostLike postLike)
+    public void likePost(@RequestBody PostLike postLike)
     {
-        //todo : validation
         userService.like(postLike);
 
     }

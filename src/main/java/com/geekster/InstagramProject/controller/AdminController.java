@@ -6,8 +6,11 @@ import com.geekster.InstagramProject.dto.SignInOutput;
 import com.geekster.InstagramProject.dto.SignUpOutput;
 import com.geekster.InstagramProject.model.Admin;
 import com.geekster.InstagramProject.service.AdminService;
+import com.geekster.InstagramProject.service.AdminTokenService;
+import com.geekster.InstagramProject.service.TokenService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,6 +20,8 @@ public class AdminController {
     @Autowired
     AdminService adminService;
 
+    @Autowired
+    AdminTokenService authService;
 
     @PostMapping("/signup")
     public SignUpOutput signUp(@Valid @RequestBody Admin signUpDto)
@@ -31,9 +36,14 @@ public class AdminController {
     }
 
     @PutMapping("/user/{id}/{blueTick}")
-    String toggleBlueTick(@PathVariable Long id,@PathVariable boolean blueTick)
+    public String toggleBlueTick(@RequestParam String email , @RequestParam String token ,@PathVariable Long id,@PathVariable boolean blueTick)
     {
-        return adminService.toggleBlueTick(id,blueTick);
+        if(authService.authenticate(email,token))
+        {
+            return adminService.toggleBlueTick(id,blueTick);
+
+        }
+       return "Invalid Admin";
     }
 
 }
