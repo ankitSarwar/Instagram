@@ -55,7 +55,7 @@ public class AdminService {
         signUpDto.setPassword(encryptedPassword);
         adminRepository.save(signUpDto);
 
-        return new SignUpOutput("Admin registered","Music streaming account created successfully");
+        return new SignUpOutput("Admin registered","Instagram account created successfully");
 
     }
 

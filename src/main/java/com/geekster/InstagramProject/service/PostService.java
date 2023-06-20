@@ -20,6 +20,7 @@ public class PostService {
 
     @Autowired
     ITokenRepo tokenRepo;
+
     public void addPost(Post post) {
         postRepo.save(post);
     }
