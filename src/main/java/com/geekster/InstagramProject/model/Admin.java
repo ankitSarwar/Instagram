@@ -25,11 +25,12 @@ public class Admin {
     @NotEmpty
     private String lastName;
 
+    @NotNull
+    private String password;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true , nullable = false)
     @Email
-    @NotBlank
-    @Pattern(regexp = "^[A-Za-z0-9+_.-]+@admin\\.inta\\.com$")
+    @Pattern(regexp = "^[A-Za-z0-9+_.-]+@admin\\.com$")
     private String email;
 
 }

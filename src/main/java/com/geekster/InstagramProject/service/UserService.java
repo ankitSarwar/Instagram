@@ -43,9 +43,7 @@ public class UserService {
     @Autowired
     LikeService likeService;
 
-    @Autowired
-    TokenService tokenService;
-
+    @Autowired TokenService tokenService;
     public SignUpOutput signUp(User signUpDto) {
 
 
@@ -185,8 +183,8 @@ public class UserService {
         {
             return "Cant follow yourself!!!!";
         }
-       User myUser = userRepo.findByUserId(myId);
-       User otherUser = userRepo.findByUserId(otherId);
+        User myUser = userRepo.findByUserId(myId);
+        User otherUser = userRepo.findByUserId(otherId);
 
         if(myUser!=null && otherUser!=null) {
 
@@ -210,8 +208,8 @@ public class UserService {
         User user = userRepo.findByUserId(id);
 
         if(user!=null) {
-           user.setBlueTicked(blueTick);
-           userRepo.save(user);
+            user.setBlueTicked(blueTick);
+            userRepo.save(user);
             return "Blue tick was set to.." + blueTick;
         }
         else
@@ -225,4 +223,7 @@ public class UserService {
         likeService.like(postLike);
     }
 
+    public void deleteUser(Long userId) {
+        userRepo.deleteById(userId);
+    }
 }

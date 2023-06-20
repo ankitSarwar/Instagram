@@ -5,4 +5,5 @@ import com.geekster.InstagramProject.model.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IAdminRepo extends JpaRepository<Admin, Long> {
+    Admin findFirstByEmail(String email);
 }
