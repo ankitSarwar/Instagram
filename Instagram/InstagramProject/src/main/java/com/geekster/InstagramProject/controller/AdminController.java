@@ -15,6 +15,7 @@ public class AdminController {
     @Autowired
     AdminService adminService;
 
+    @Autowired
 
     @PutMapping("/user/{id}/{blueTick}")
     String toggleBlueTick(@PathVariable Long id,@PathVariable boolean blueTick)
