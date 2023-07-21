@@ -87,7 +87,6 @@ public class AdminService {
         }
         catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
-
         }
 
         //match it with database encrypted password

@@ -20,15 +20,12 @@ public class TokenService {
         if(token==null && email==null){
             return false;
         }
-
         AuthenticationToken authToken = tokenRepo.findFirstByToken(token);
 
         if(authToken==null){
             return false;
         }
-
         String expectedEmail = authToken.getUser().getEmail();
-
 
         return expectedEmail.equals(email);
     }
@@ -36,7 +33,6 @@ public class TokenService {
 
     public void deleteToken(String token) {
         AuthenticationToken token1 = tokenRepo.findFirstByToken(token);
-
         tokenRepo.deleteById(token1.getTokenId());
     }
 
