@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("post")
@@ -62,8 +63,9 @@ public class PostController {
     }
 
     @GetMapping("/{postId}/likeCount")
-    long getLikesForPost(@PathVariable Long postId)
+    public long getLikesForPost(@PathVariable Long postId)
     {
         return postService.getLikes(postId);
     }
+
 }

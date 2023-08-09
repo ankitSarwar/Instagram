@@ -17,7 +17,7 @@ public class LikeService {
     }
 
     public long getLikes(Long postId) {
-        //todo : validation to be added
+
         return likeRepo.countByPost_PostId(postId);
     }
 

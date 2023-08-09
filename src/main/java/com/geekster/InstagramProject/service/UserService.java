@@ -3,6 +3,7 @@ package com.geekster.InstagramProject.service;
 import com.geekster.InstagramProject.dto.SignInInput;
 import com.geekster.InstagramProject.dto.SignInOutput;
 import com.geekster.InstagramProject.dto.SignUpOutput;
+import com.geekster.InstagramProject.exception.EmptyInputException;
 import com.geekster.InstagramProject.model.AuthenticationToken;
 import com.geekster.InstagramProject.model.Post;
 import com.geekster.InstagramProject.model.PostLike;
@@ -46,6 +47,9 @@ public class UserService {
     @Autowired TokenService tokenService;
     public SignUpOutput signUp(User signUpDto) {
 
+        if(signUpDto.getFirstName().isEmpty() || signUpDto.getFirstName().length()==0){
+            throw new EmptyInputException("601","Input fields are empty");
+        }
 
         //check if user exists or not based on email
         User user = userRepo.findFirstByEmail(signUpDto.getEmail());
